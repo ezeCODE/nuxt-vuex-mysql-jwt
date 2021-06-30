@@ -1,0 +1,34 @@
+@import "./screen";
+
+
+.alert {
+    border-radius: .5em; box-sizing: border-box; padding: 1em 2em; margin: 1em 0em;
+    position: relative;  width: 100%;  border-radius: .5em; border: 1em;
+    box-sizing: border-box; padding: 2em 2em; display: grid; grid-template-columns: repeat(1, 1fr); gap: 1.5em;
+    margin: 1em 0em; height: max-content;
+}
+ 
+ 
+
+.alert-title{ font-size: 1.1em; font-weight: bold; line-height: normal;
+    font-family: 'Poppins', sans-serif; text-transform: uppercase;
+}
+
+.alert-paragraph{ font-size: .8em; line-height: normal;
+    font-family: 'Poppins', sans-serif;
+    @include tablet { font-size: 1.2em;  }
+}
+
+
+.alert-success { color: rgb(6,182,108);
+    background:rgb(217,250,232);
+   
+}
+
+.alert-warning { color: rgb(34, 34, 34);
+    background: rgb(253, 241, 69);
+}
+
+.alert-danger { color: rgb(245,92,110);
+    background: rgb(255,229,232);
+}

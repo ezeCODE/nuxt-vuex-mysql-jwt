@@ -1,0 +1,75 @@
+@import "./_screen.scss";
+@import "./_buttons";
+@mixin inputElement ($bg) {
+    .form-input, .form-textarea {
+        background: brown;
+        width: 100%;
+        border: 1px solid rgb(203, 203, 248);
+        font-family: 'Poppins', sans-serif;
+        background: $bg;
+        color: black;
+        font-size: .9em;
+        border: none;
+        outline: none;
+        margin-top: .2em;
+        border-bottom: 1px solid blue;
+        resize: none;
+        &:focus {
+            border-bottom: 1px solid rgb(61, 61, 61);
+        }
+        &::placeholder {
+            color: rgb(66, 66, 66);
+        }
+    }
+}
+
+.mark {
+    color: red;
+    font-size: 1.2em;
+}
+
+.form-main {
+    background: rgb(220, 254, 255);
+    position: relative;
+    top: 0em;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em 1em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.form-label {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: .5em;
+    font-size: .8em;
+    font-weight: bold;
+    color: rgb(54, 54, 240);
+    @include desktop {
+        font-size: 1em;
+    }
+}
+
+@include inputElement (rgb(255, 255, 255));
+.form-input {
+    line-height: 2em;
+}
+
+.form-textarea {
+    resize: none;
+}
+
+.form-btn {
+    @include buttonSmall (.8em, rgb(143, 253, 143), black);
+}
+
+.form-link {
+    font-size: .8em;
+    text-decoration: none;
+    color: rgb(33, 117, 165);
+    line-height: 2em;
+    font-family: 'Poppins', sans-serif;
+    @include tablet {
+        font-size: 1em;
+    }
+}

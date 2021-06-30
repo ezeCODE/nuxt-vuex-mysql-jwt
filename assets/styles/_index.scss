@@ -1,0 +1,16 @@
+@import "./screen";
+.container {
+    max-width: 1600px;
+    position: relative;
+    margin: 0 auto;
+    min-height: 2000px;
+    padding: 0em 1em;
+    @include desktop {
+        padding: 0em 0em;
+    }
+}
+
+.cover-index {
+    box-sizing: border-box;
+    padding: 2em 0em;
+}

@@ -1,0 +1,42 @@
+@import "./_screen.scss";
+
+.icons-small {
+   position: relative; width: 50px; display: block; 
+}
+
+.icon-footer{
+   position: relative; margin-right: .5em; top: .2em;
+}
+
+.icons{ position: relative; font-size: 1.2em; top: 2px; margin-right: .3em; }
+
+.icon-bar-profile { position: relative; font-size: 1em; top: 4px; margin-right: .3em; 
+   @include tablet { top: 2px;   }
+}
+
+.icon-top{ top: 5px;  }
+
+
+.icon-user{ position: relative; top: 2px;  }
+
+//botom bar
+
+.bar-icon-home-2{
+   font-size: 1.5em;
+}
+
+.bar-icon-ios-information{top: 2px; }
+//.bar-icon-user-close{}
+
+.bar-icon-comment{
+   font-size: 1.6em;
+}
+
+.bar-icon-cart-shopping-1{
+   font-size: 1.5em;
+
+}
+
+.bar-icon-heart{
+   font-size: 1.6em;
+}

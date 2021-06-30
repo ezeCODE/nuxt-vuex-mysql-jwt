@@ -1,0 +1,114 @@
+@import "./screen";
+@mixin button ($fs, $bg, $fc) {
+    word-break: break-all;
+    width: max-content;
+    height: max-content;
+    border: none;
+    cursor: pointer;
+    border-radius: 1em;
+    outline: none;
+    font-size: $fs;
+    background: $bg;
+    color: $fc;
+    box-sizing: border-box;
+    padding: 1em 32px;
+    transition: scale .5s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    &:hover {
+        box-shadow: -6px 8px 19px 0px rgba(141, 141, 141, 0.75);
+        -webkit-box-shadow: -6px 8px 19px 0px rgba(141, 141, 141, 0.75);
+        -moz-box-shadow: -6px 8px 19px 0px rgba(141, 141, 141, 0.75);
+    }
+    &:disabled {
+        background: rgb(228, 228, 228);
+    }
+    &:active {
+        transform: scale(.9);
+    }
+    &:focus {
+        outline: 0;
+    }
+    span {
+        position: relative;
+        top: 2px;
+        margin-right: 2px;
+    }
+}
+
+@mixin buttonSmall ($fs, $bg, $fc) {
+    width: max-content;
+    border: none;
+    cursor: pointer;
+    border-radius: 1em;
+    outline: none;
+    font-size: $fs;
+    background: $bg;
+    color: $fc;
+    height: max-content;
+    box-sizing: border-box;
+    padding: .7em 22px;
+    transition: scale .5s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    &:hover {
+        box-shadow: -6px 8px 19px 0px rgba(141, 141, 141, 0.75);
+    }
+    &:disabled {
+        background: rgb(228, 228, 228);
+    }
+    &:active {
+        transform: scale(.9);
+    }
+    &:focus {
+        outline: 0;
+    }
+    span {
+        position: relative;
+        top: 2px;
+        margin-right: 2px;
+    }
+}
+
+@mixin buttonMini ($bg, $fc, $pw, $ph) {
+    width: max-content;
+    border: none;
+    cursor: pointer;
+    border-radius: .5em;
+    outline: none;
+    font-size: .7em;
+    background: $bg;
+    color: $fc;
+    height: max-content;
+    box-sizing: border-box;
+    padding: $pw $ph;
+    font-family: 'Poppins', sans-serif;
+    transition: scale .5s ease-in-out;
+    &:hover {
+        box-shadow: -6px 8px 19px 0px rgba(141, 141, 141, 0.75);
+    }
+    &:disabled {
+        background: rgb(228, 228, 228);
+    }
+    &:active {
+        transform: scale(.9);
+    }
+    &:focus {
+        outline: 0;
+    }
+    span {
+        position: relative;
+        top: 2px;
+        margin-right: 2px;
+    }
+}
+
+.button-mini {
+    @include buttonMini (null, 1em, .5em, .5em);
+    @include tablet {
+        font-size: 1em;
+    }
+}
+
+.chat-btn-send {
+    margin: 1em 0em;
+    @include buttonSmall (.9em, #4583ca, rgb(255, 255, 255));
+}

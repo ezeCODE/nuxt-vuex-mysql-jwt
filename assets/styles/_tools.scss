@@ -1,0 +1,86 @@
+@import "./screen";
+image {
+    display: block;
+}
+
+.bg-silver-softh {
+    background: rgb(128, 172, 255);
+}
+
+.alert-success {
+    box-sizing: border-box;
+    padding: 2em 1em;
+    width: 100%;
+    background: rgb(198, 255, 141);
+}
+
+.max-content {
+    width: max-content;
+}
+
+.padding-2-0 {
+    padding: 2em 0em
+}
+
+.padding-1-0 {
+    padding: 1em 0em
+}
+
+.cover-index-image {
+    width: 100%;
+    border-radius: 1em;
+    margin: 0em;
+}
+
+.widgeth-ul {
+    box-sizing: border-box;
+    padding: 2em 0em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+}
+
+.widgeth-li {
+    font-family: 'Poppins', sans-serif;
+    color: rgb(0, 0, 0);
+    background: rgb(195, 208, 216);
+    font-size: 1em;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1em .6em;
+    transition: all .3s linear;
+    font-weight: 500;
+    line-height: normal;
+    &:hover {
+        background: rgb(177, 225, 255);
+    }
+    @include tablet {
+        padding: 1em 1.2em;
+    }
+}
+
+.widgeth-li-active {
+    background: rgb(177, 225, 255);
+}
+
+table {
+    position: relative;
+    width: 100%;
+}
+
+tr {
+    transition: all .3s linear;
+    &:hover {
+        background: yellow;
+    }
+}
+
+th {
+    text-align: start!important;
+}
+
+td, th {
+    text-align: start!important;
+    box-sizing: border-box;
+    padding: 1em 0em;
+}

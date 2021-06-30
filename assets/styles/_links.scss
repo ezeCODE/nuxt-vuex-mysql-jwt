@@ -1,0 +1,22 @@
+@import "./_screen";
+
+@mixin links ($fs) { 
+    position: relative; width: max-content;
+    font-weight: bold;  font-family: 'Poppins', sans-serif;
+    font-size: $fs;  
+    &:hover{  color:rgb(47,46,65); }
+    @include tablet { text-decoration: none; }
+    @include desktop { &:hover{ text-decoration: underline; } }
+     
+} 
+
+.links{ margin: 1em 0em;
+    @include links(.8em);
+    &:hover { color: black; }
+  }   
+
+  
+.link-rigth{  margin: auto; margin-right: 0em;
+     @include links(1em);
+  }
+  

@@ -1,0 +1,49 @@
+@import "./screen";
+.grid {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1em;
+    align-items: flex-start;
+}
+
+.cols-1 {
+    @include tablet {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.cols-2 {
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.cols-3 {
+    @include tablet {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.cols-4 {
+    @include tablet {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.cols-5 {
+    @include tablet {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+.space-cols-3 {
+    @include tablet {
+        grid-column: 1 / 4;
+    }
+}
+
+.vertical-center {
+    align-items: center;
+}
