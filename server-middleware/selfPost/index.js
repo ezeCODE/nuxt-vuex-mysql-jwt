@@ -1,22 +1,30 @@
 const bodyParser = require('body-parser')
 const app = require('express')()
+import checkingToken from "../../middleware/token";
+const jwt = require('jsonwebtoken')
 app.use(bodyParser.json())
 import { connection } from "../../plugins/mysql/connect";
 
 
-app.post('/selfPost', (req, res) => {
+app.post('/selfPost', checkingToken, (req, res) => {
 
     const sql = `select * from profiles where email = "${req.body.email}" `
-    connection.query(sql, (error, results) => {
-        res.json(results)
-            //  res.json(results)
-            //  res.json(results)
-            // if (results.length > 0) {
-            // } else {
-            //     res.send("no reultados")
-            // }
+    jwt.verify(req.token, 'secretKey', (error, authData) => {
 
+        if (error) {
+            res.statusCode(403)
+
+        } else {
+
+            connection.query(sql, (error, results) => {
+                res.json(results)
+
+            })
+
+
+        }
     })
+
 
 })
 

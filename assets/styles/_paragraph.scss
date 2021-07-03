@@ -1,33 +1,57 @@
 @import "./_screen.scss";
+strong {
+    font-weight: bold;
+}
 
-.paragraphs, .paragraphs-question, .paragraphs-res, .paragraphs-response , .paragraphs-chat{
-    font-family: 'Poppins', sans-serif;  
+.paragraphs, .paragraphs-question, .paragraphs-res, .paragraphs-response, .paragraphs-chat {
+    font-family: 'Poppins', sans-serif;
     // -webkit-user-select: none;  
     //  -moz-user-select: none;      
     //  -ms-user-select: none;      
     //  user-select: none;  
 }
 
-.paragraphs, .paragraphs-res{ font-size: .8em; line-height: 24px;
-    
-    @include  tablet { font-size: 1em; }
-
+.paragraphs, .paragraphs-res {
+    font-size: .8em;
+    line-height: 24px;
+    @include tablet {
+        font-size: 1em;
+    }
 }
 
-.text-limit { overflow: hidden; text-overflow: ellipsis;
+.text-limit {
+    overflow: hidden;
+    text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
-.paragraphs-chat { font-size: .7em;  }
+.paragraphs-chat {
+    font-size: .7em;
+}
 
-.text-center { margin: auto; }
+.text-center {
+    margin: auto;
+}
 
-.paragraphs{ color: black; }
+.paragraphs {
+    color: black;
+}
 
-.paragraphs-question{ touch-action: none; color: black; -webkit-touch-callout: none; }
+.paragraphs-question {
+    touch-action: none;
+    color: black;
+    -webkit-touch-callout: none;
+}
 
-.paragraphs-response{ font-weight: bold;  line-height: normal; color: rgb(15, 133, 35);  }
+.paragraphs-response {
+    font-weight: bold;
+    line-height: normal;
+    color: rgb(15, 133, 35);
+}
 
-.paragraphs-marck{ color: blue; font-weight: bold; }
+.paragraphs-marck {
+    color: blue;
+    font-weight: bold;
+}

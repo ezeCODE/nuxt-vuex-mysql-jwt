@@ -4,14 +4,8 @@ image {
 }
 
 .bg-silver-softh {
+    text-align: justify;
     background: rgb(128, 172, 255);
-}
-
-.alert-success {
-    box-sizing: border-box;
-    padding: 2em 1em;
-    width: 100%;
-    background: rgb(198, 255, 141);
 }
 
 .max-content {
@@ -24,6 +18,27 @@ image {
 
 .padding-1-0 {
     padding: 1em 0em
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-start {
+    text-align: start;
+}
+
+.vertical-center {
+    align-items: center;
+}
+
+.cursr-pointer {
+    cursor: pointer;
+}
+
+.position-rigth {
+    margin: auto;
+    margin-right: 0em;
 }
 
 .cover-index-image {
@@ -75,12 +90,20 @@ tr {
     }
 }
 
-th {
-    text-align: start!important;
-}
-
-td, th {
-    text-align: start!important;
+th, td {
     box-sizing: border-box;
     padding: 1em 0em;
+}
+
+.card-profile {
+    background: darkslategrey;
+    color: white;
+}
+
+.bg-green-soft {
+    background: rgb(164, 250, 164);
+}
+
+.form-search {
+    background: chartreuse;
 }

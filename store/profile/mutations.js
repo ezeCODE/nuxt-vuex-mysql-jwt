@@ -1,11 +1,25 @@
 export default {
 
+    clearDataUpdate: (state) => { state.dataPostSelected = [] },
+    clearDataResult: (state) => { state.searchResults = [] },
+
+    chargedDataResult: (state, data) => {
+
+        state.searchResults = data
+
+    },
+
     chargedToken: (state, data) => {
-        console.log("token id");
 
         state.tokenProfile = data.token
         state.emailProfile = data.email
-        console.log(data);
+
+    },
+
+    DataUpdate: (state, data) => {
+
+        state.dataPostSelected.push(data)
+
     },
 
 

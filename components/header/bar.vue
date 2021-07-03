@@ -6,9 +6,13 @@
   <li class="bar-li"> <n-link to="/top20"  class="bar-li-link"> top 20 perfiles </n-link> </li>
   <li class="bar-li" v-if="TOKENPROFILE !=''" > <n-link to="/account"  class="bar-li-link"> publicar </n-link> </li>
   <li class="bar-li" v-else > <n-link to="/login"  class="bar-li-link">  login </n-link> </li>
-  <li class="bar-li"  v-if="TOKENPROFILE !=''"    @click="deleteToken()" >   cerrar session  </li>
+ 
+  <li class="bar-li"  v-if="TOKENPROFILE !=''"   > <n-link to="/account/search"  class="bar-li-link">  buscar talentos </n-link>  </li>
+  <li class="bar-li"  v-else  >  <n-link to="/login"  class="bar-li-link">  buscar talentos </n-link> </li>
+    <li class="bar-li  "  v-if="TOKENPROFILE !=''"  @click="deleteToken()" >   cerrar session  </li>
    
   </ul>
+ 
  
 </div>
 </template>
@@ -19,22 +23,19 @@ import { mapMutations, mapState } from "vuex";
 export default {
 
   computed:{
-    ...mapState({
-      TOKENPROFILE : state => state.profile.tokenProfile
-    }),
-
-    
- 
+  ...mapState({
+  TOKENPROFILE : state => state.profile.tokenProfile
+  })
 
   },
+
+
   methods:{
- ...mapMutations({
-   deleteToken : 'profile/deleteToken'
- }),
 
- 
+  ...mapMutations({
+  deleteToken : 'profile/deleteToken'
 
-
+  })
 
   }
 
@@ -67,9 +68,9 @@ export default {
 
 .bar-render{ margin-left: 0%; }
 
-.bar-ul{ display: grid; grid-template-columns: repeat(1, 1fr); align-content: flex-start;
-    @include desktop { grid-template-columns: repeat(10, max-content); align-items: flex-start; }
-    height: 100%; align-items: center;
+.bar-ul{ width: 100%; display: grid; grid-template-columns: repeat(1, 1fr); align-content: flex-start;
+    @include desktop { grid-template-columns: repeat(5, max-content); align-items: flex-start; }
+    height: 100%; 
     
 }
 

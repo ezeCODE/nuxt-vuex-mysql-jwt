@@ -4,10 +4,9 @@ app.use(bodyParser.json())
 import { connection } from "../../plugins/mysql/connect";
 
 
-app.get('/readProfiles20', (req, res) => {
+app.post('/findEmail', (req, res) => {
 
-    const sql = 'select * from profiles limit 20'
-
+    const sql = `select * from profiles where email = "${req.body.email}" `
     connection.query(sql, (error, results) => {
         res.json(results)
 
@@ -16,7 +15,6 @@ app.get('/readProfiles20', (req, res) => {
 
 
 })
-
 
 
 module.exports = app

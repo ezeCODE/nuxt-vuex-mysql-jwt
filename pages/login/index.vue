@@ -4,6 +4,11 @@
 
   />
  
+ <div class="alert alert-warning" v-if="alertWarnning" >
+  <p class="paragraphs-res">
+   vuelva a intentar por favor
+  </p>
+  </div>
 
   <div class="padding-1-0">
   <label for="" class="form-label"> email  </label>
@@ -23,6 +28,7 @@
   <div class="padding-2-0">
   <button class="button-mini" @click="sendData()"> login </button>
   </div>
+  
   </div>
 
   <div class="cover-index">
@@ -45,10 +51,12 @@ export default {
 
     data(){
     return {
+     alertWarnning:false,
     login : {
     email : 'ezequiel@hotmail.com.ar',
     password : 'qwerty123',
-    IDTOKEN : ''
+    IDTOKEN : '',
+    
 
     }
     }
@@ -60,12 +68,13 @@ export default {
     },
 
     methods:{
-      ...mapMutations({
-        chargedToken : 'profile/chargedToken'
+    ...mapMutations({
+      chargedToken : 'profile/chargedToken'
 
 
-      }),
+    }),
 
+     
 
     async sendData (){
 
@@ -77,7 +86,6 @@ export default {
 
     let self = this
 
-
     jwt.sign({ user }, 'secretKey', (err, token) => {
 
   
@@ -88,6 +96,7 @@ export default {
     this.$router.push({ path : '/' })
 
     }else {
+      this.alertWarnning = true
     console.log("not login");
     }
 

@@ -21,7 +21,9 @@ export default {
         '~/server-middleware/add',
         '~/server-middleware/read',
         '~/server-middleware/selfPost',
-        '~/server-middleware/limit20'
+        '~/server-middleware/limit20',
+        '~/server-middleware/searchAbility',
+        '~/server-middleware/findEmail'
 
     ],
 
@@ -29,6 +31,7 @@ export default {
         './assets/styles/reset.css',
         './assets/styles/_screen.scss',
         './assets/styles/_tools.scss',
+        './assets/styles/_alerts.scss',
         './assets/styles/_cols.scss',
         './assets/styles/_buttons.scss',
         './assets/styles/_forms.scss',
@@ -41,8 +44,8 @@ export default {
 
 
     plugins: [
-        { src: './plugins/mysql/connect.js', mode: 'server' },
-        { src: './plugins/mysql/jwt/index.js', mode: 'client' }
+        { src: './plugins/mysql/connect.js', mode: 'server' }
+
 
     ],
 

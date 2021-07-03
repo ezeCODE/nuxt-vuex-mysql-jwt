@@ -1,20 +1,36 @@
 const bodyParser = require('body-parser')
 const app = require('express')()
+import checkingToken from "../../middleware/token";
+const jwt = require('jsonwebtoken')
 app.use(bodyParser.json())
 import { connection } from "../../plugins/mysql/connect";
 
-app.post('/add', (req, res) => {
+app.post('/add', checkingToken, (req, res) => {
 
-    res.json({
-        req: req.body
-    })
+
     const sql = `insert into profiles (email, fullName, age, skills) values 
     ("${req.body.email}",  "${req.body.fullName}", "${parseInt(req.body.age)}", "${req.body.skills}" )`
 
-    connection.query(sql, (error) => {
-        // res.send("profile created")
+    jwt.verify(req.token, 'secretKey', (error, authData) => {
 
+        if (error) {
+            res.statusCode(403)
+
+        } else {
+
+            connection.query(sql, (error) => {
+
+                res.send("profile created")
+
+            })
+
+
+        }
     })
+
+
+
+
 
 
 

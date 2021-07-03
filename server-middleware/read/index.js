@@ -1,28 +1,41 @@
 const bodyParser = require('body-parser')
 const app = require('express')()
+const jwt = require('jsonwebtoken')
+import checkingToken from "../../middleware/token";
 app.use(bodyParser.json())
 import { connection } from "../../plugins/mysql/connect";
 
 
-app.get('/read', (req, res) => {
+app.get('/read', checkingToken, (req, res) => {
 
     const sql = 'select * from profiles'
 
-    connection.query(sql, (error, results) => {
-        // res.send("profile created")
-        if (results.length > 0) {
+    jwt.verify(req.token, 'secretKey', (error, authData) => {
 
-            res.json(results)
+        if (error) {
+            res.statusCode(403)
+
         } else {
-            res.send("no reultados")
+
+            jwt.verify(req.token, 'secretKey', (error, authData) => {
+
+                if (error) {
+                    res.statusCode(403)
+
+                } else {
+
+                    connection.query(sql, (error, result) => {
+                        res.send(result)
+
+                    })
+
+
+                }
+            })
         }
-
     })
-
-
-
-
 })
+
 
 
 module.exports = app

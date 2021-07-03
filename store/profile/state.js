@@ -2,7 +2,11 @@ export default () => ({
 
 
     tokenProfile: '',
-    emailProfile: ''
+    emailProfile: '',
+    dataPostSelected: [],
+
+    searInput: '',
+    searchResults: []
 
 
 
