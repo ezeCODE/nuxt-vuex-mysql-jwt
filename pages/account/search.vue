@@ -5,7 +5,7 @@
 
   <header >
   <p class="paragraphs padding-2-0 "> Tu siguiente talento  </p>
-  <h3  class="padding-2-0"> Haz búsqueda por habilidades disponibles </h3>
+  <h3  class="padding-2-0"> Haz búsqueda por habilidades disponibles, separa con una coma </h3>
   </header>
 
   <div class="">
@@ -29,9 +29,9 @@
   <th>skills </th>
   <th> look profile </th>
   </tr>
- 
+
   <tr v-for="(items, index) in SEARCHRESULTS " :key="index">
-  <td> {{ items.fullName }} </td>
+  <td> {{ items.fullname }} </td>
   <td> {{ items.email }} </td>
   <td> {{ items.age }} </td>
   <td> {{ items.skills }}  </td>
